@@ -1,5 +1,5 @@
 
-# Lotto Number Generator
+# 난수생성기
 
 ## Overview
 
