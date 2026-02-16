@@ -95,3 +95,8 @@ h1 {
   box-shadow: none; /* Remove shadow for history numbers for a flatter look */
   border: 1px solid #ddd;
 }
+
+.history-placeholder {
+  color: #999;
+  font-style: italic;
+}

@@ -1,1 +1,1 @@
-난수생성기
+Random Number Generator
