@@ -6,7 +6,8 @@ document.getElementById('generate-btn').addEventListener('click', () => {
     const randomNumber = Math.floor(Math.random() * 45) + 1;
     numbers.add(randomNumber);
   }
-  for (const number of numbers) {
+  const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+  for (const number of sortedNumbers) {
     const numberElement = document.createElement('div');
     numberElement.classList.add('number');
     numberElement.textContent = number;
