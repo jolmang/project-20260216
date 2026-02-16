@@ -27,6 +27,7 @@ h1 {
 
 #numbers-container {
   display: flex;
+  margin-bottom: 20px; /* Add some space below the current numbers */
 }
 
 .number {
@@ -42,4 +43,55 @@ h1 {
   font-weight: bold;
   margin: 0 5px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+}
+
+#history-container {
+  margin-top: 30px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+#history-container h2 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+#history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-entry {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.history-entry h3 {
+  margin: 0 0 10px 0;
+  color: #777;
+  font-size: 1.1em;
+}
+
+.history-numbers {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.history-numbers .number {
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  margin: 0;
+  box-shadow: none; /* Remove shadow for history numbers for a flatter look */
+  border: 1px solid #ddd;
 }
