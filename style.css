@@ -17,9 +17,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align to top for smaller screens */
     min-height: 100vh;
     margin: 0;
+    padding-top: 20px; /* Add some space at the top */
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAARElEQVRoQ+3QAQSAAAfys/P/2Q40I8hAYwQgAEEAggAEIAhAAIIABCAIQAACAAQgCEAAggAEIAhAAIIABCAIQAACEIAACQAb2t2gYwAAAABJRU5ErkJggg==');
 }
 
@@ -27,8 +28,10 @@ h1 {
     color: var(--highlight-color);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-shadow: 0 0 10px var(--highlight-color);
+    text-align: center; /* Center the title */
 }
 
 #generate-btn {
@@ -60,10 +63,11 @@ h1 {
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap; /* Allow numbers to wrap */
 }
 
 #numbers-container {
-    min-height: 60px;
+    min-height: 50px; /* Adjusted height */
     margin-bottom: 30px;
 }
 
@@ -86,9 +90,10 @@ h1 {
     width: 90%;
     max-width: 700px;
     background-color: var(--card-background);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow-color);
+    margin-bottom: 20px; /* Add space at the bottom */
 }
 
 #history-container h2 {
@@ -100,19 +105,19 @@ h1 {
 #history-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .history-slot {
     background-color: var(--background-color);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
 }
 
 .history-slot h3 {
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
     color: var(--primary-text-color);
     font-size: 1.1em;
 }
@@ -125,4 +130,46 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    body {
+        padding-top: 10px;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Smaller font size for title */
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    #generate-btn {
+        font-size: 1em;
+        padding: 12px 25px;
+        margin-bottom: 20px;
+    }
+
+    #numbers-container, .history-numbers {
+        gap: 10px; /* Smaller gap between numbers */
+    }
+    
+    .number {
+        width: 40px; /* Smaller numbers */
+        height: 40px;
+        font-size: 1.2em;
+    }
+
+    #history-container {
+        padding: 15px;
+    }
+
+    .history-slot {
+        padding: 10px;
+    }
+
+    .history-slot h3 {
+        font-size: 1em;
+    }
 }
