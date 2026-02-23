@@ -1,102 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background-color: #1a1a2e;
+    --card-background: #16213e;
+    --primary-text-color: #e0e0e0;
+    --accent-color: #0f3460;
+    --highlight-color: #e94560;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
 body {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAARElEQVRoQ+3QAQSAAAfys/P/2Q40I8hAYwQgAEEAggAEIAhAAIIABCAIQAACAAQgCEAAggAEIAhAAIIABCAIQAACEIAACQAb2t2gYwAAAABJRU5ErkJggg==');
 }
 
 h1 {
-  color: #333;
+    color: var(--highlight-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px var(--highlight-color);
 }
 
 #generate-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(145deg, var(--highlight-color), #c33a52);
+    color: white;
+    box-shadow: 0 5px 15px var(--shadow-color), 
+                inset 0 -2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+#generate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-color), 
+                inset 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+#generate-btn.reset-mode {
+    background: linear-gradient(145deg, var(--accent-color), #0a2240);
+}
+
+#numbers-container, .history-numbers {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
 
 #numbers-container {
-  display: flex;
-  margin-bottom: 20px; /* Add some space below the current numbers */
+    min-height: 60px;
+    margin-bottom: 30px;
 }
 
 .number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 5px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: var(--card-background);
+    color: var(--primary-text-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease;
 }
 
 #history-container {
-  margin-top: 30px;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-  padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 #history-container h2 {
-  text-align: center;
-  color: #555;
-  margin-bottom: 15px;
+    text-align: center;
+    margin-top: 0;
+    color: var(--highlight-color);
 }
 
 #history-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.history-entry {
-  border: 1px solid #eee;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.history-slot {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
 }
 
-.history-entry h3 {
-  margin: 0 0 10px 0;
-  color: #777;
-  font-size: 1.1em;
-}
-
-.history-numbers {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.history-numbers .number {
-  width: 35px;
-  height: 35px;
-  font-size: 16px;
-  margin: 0;
-  box-shadow: none; /* Remove shadow for history numbers for a flatter look */
-  border: 1px solid #ddd;
+.history-slot h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-text-color);
+    font-size: 1.1em;
 }
 
 .history-placeholder {
-  color: #999;
-  font-style: italic;
+    color: #4a5568;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }

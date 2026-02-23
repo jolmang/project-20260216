@@ -1,19 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Number Generator</title>
-  <link href='/style.css' rel='stylesheet'>
-</head>
-<body>
-  <h1>Random Number Generator</h1>
-  <button id="generate-btn">Generate Numbers</button>
-  <div id="numbers-container"></div>
-  <div id="history-container">
-    <h2>Generation History</h2>
-    <div id="history-list"></div>
-  </div>
-  <script defer type="text/javascript" src="/main.js"></script>
-</body>
-</html>
+
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Random Number Generator</title>
+        <link href='/style.css' rel='stylesheet'>
+      </head>
+      <body>
+       <h1>Random Number Generator</h1>
+       <button id="generate-btn">Generate Numbers</button>
+       <div id="numbers-container"></div>
+       <div id="history-container">
+         <h2>Generation History</h2>
+         <div id="history-list">
+           <div class="history-slot" data-slot="0"></div>
+           <div class="history-slot" data-slot="1"></div>
+           <div class="history-slot" data-slot="2"></div>
+           <div class="history-slot" data-slot="3"></div>
+           <div class="history-slot" data-slot="4"></div>
+         </div>
+       </div>
+
+       <!-- Firebase SDK -->
+       <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+       <script>
+         // Your web app's Firebase configuration
+         const firebaseConfig = {
+           apiKey: "AIzaSyA6wNnqELhLcLUbqdlbcCRBY567wWIfPSE",
+           authDomain: "random-generator-5673568-7be04.firebaseapp.com",
+           projectId: "random-generator-5673568-7be04",
+           storageBucket: "random-generator-5673568-7be04.appspot.com",
+           messagingSenderId: "403309858385",
+           appId: "1:403309858385:web:89c33e800a747352a9a779"
+         };
+
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+       </script>
+
+       <script src="main.js"></script>
+      </body>
+      </html>
+      
